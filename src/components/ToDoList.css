@@ -1,0 +1,160 @@
+.flexbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+
+.inputstyle {
+    position: relative;
+    height: 10vh;
+    width: 50%;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-top: 5px;
+
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.todo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    color: white;
+}
+
+.submittedInput {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+}
+
+input {
+    border: none;
+    height: 100%;
+    width: 40%;
+    background-color: #292929;
+    color: white;
+    transition: background-color 0.3s ease-in-out;
+    text-align: center;
+    
+
+}
+
+.inputText {
+    height: 9.4vh;
+    width: 60vw;
+    border: solid;
+    border-color: #fc2f70;
+    border-width: 1px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+input:focus {
+  outline: none;
+}
+
+input::placeholder {
+  color: hsla(0, 0%, 100%, 0.6);
+}
+
+span {
+  position: absolute;
+  background-color: #fc2f70;
+  transform-origin: center;
+  transition: transform 0.5s ease;
+}
+
+.bottom,
+.top {
+  height: 1px;
+  left: 0;
+  right: 0;
+  transform: scaleX(0);
+}
+
+.left,
+.right {
+  width: 1px;
+  top: 0;
+  bottom: 0;
+  transform: scaleY(0);
+}
+
+.top {
+  top: 0;
+}
+
+.bottom {
+  bottom: 0;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+
+input:focus ~ .top, input:focus ~ .bottom {
+  transform: scaleX(1);
+}
+
+input:focus ~ .left, input:focus ~ .right {
+  transform: scaleY(1);
+}
+
+
+/* input end */
+/* button style */
+button {
+    position: relative;
+    height: 10vh;
+    width: 10vw;
+    background-color: rgb(24, 24, 24);
+    color:white;
+    z-index: 1;
+    border: solid;
+    border-color: #fc2f70;
+    border-width: 1px;
+    margin-top: 5px;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+button:hover {
+    cursor: pointer;
+    animation: jelly 0.5s;
+}
+
+@keyframes jelly {
+    0%,
+    100% {
+    transform: scale(1, 1);
+    }
+    25% {
+    transform: scale(0.9, 1.1);
+    }
+    50% {
+    transform: scale(1.1, 0.9);
+    }
+    75% {
+    transform: scale(0.95, 1.05);
+    }
+}
+/* button end */
