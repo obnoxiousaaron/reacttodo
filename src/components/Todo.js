@@ -8,9 +8,13 @@ function Todo({ todo, index, completeTodo, removeTodo }) {
         style={{ textDecoration: todo.isCompleted ? "line-through" : "" }}
       >
         <div className="submittedInput">
-          <button onClick={() => completeTodo(index)}>Complete</button>
-          <div className="inputText">{todo.text}</div>
-          <button onClick={() => removeTodo(index)}>x</button>
+          <button id="leftBtn" onClick={() => completeTodo(index)}>Complete</button>
+          <div className="inputText">
+            <p className="alignTextCenter">
+            {todo.text}
+            </p>
+          </div>
+          <button id="rightBtn" onClick={() => removeTodo(index)}>Delete</button>
         </div>
       </div>
     );

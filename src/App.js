@@ -1,21 +1,22 @@
 import React from "react";
 import "./App.css";
 import Todo from "./components/Todo";
-import TodoForm from "./components/TodoForm";
+import TodoForm from "./components/ToDoForm";
+import ReactPlayer from 'react-player'
 
 
 function App() {
   const [todos, setTodos] = React.useState([
     {
-      text: "Learn about React",
+      text: "Imagine a world...",
       isCompleted: false
     },
     {
-      text: "Meet friend for lunch",
+      text: "Without To-Do lists",
       isCompleted: false
     },
     {
-      text: "Build really cool todo app",
+      text: "Tragic, isn't?",
       isCompleted: false
     }
   ]);
@@ -39,6 +40,7 @@ function App() {
 
   return (
     <div className="app">
+      <ReactPlayer width="100vw" height="100vh" className="video" playing={true} autoplay={true} loop="" muted="" url="https://youtu.be/qsdzdUYl5c0" />
       <div className="todo-list">
         <TodoForm addTodo={addTodo} />
         {todos.map((todo, index) => (
@@ -54,5 +56,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;

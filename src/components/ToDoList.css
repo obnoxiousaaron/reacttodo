@@ -18,11 +18,30 @@
 }
 
 form {
+    margin: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     align-content: center;
-    flex-direction: column;
+    flex-direction: row;
+}
+
+.inputParentParent {
+    display: flex;
+    justify-content: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+    width: 80%;
+    margin: 20px;
+}
+
+.inputParent {
+    width: 60vw;
+    z-index: 2;
+
+
 }
 
 .todo {
@@ -40,41 +59,103 @@ form {
     align-items: center;
     align-content: center;
     flex-direction: row;
+    z-index: 2;
+
 }
 
 input {
-    border: none;
-    height: 100%;
-    width: 40%;
+    border: solid;
+    border-color: #1b1b1b;
+    border-width: 0.1px;
+    margin-right: 5px;
+    height: 10vh;
+    width: 100%;
     background-color: #292929;
     color: white;
+    background-color: 0.3s ease-in-out;
     transition: background-color 0.3s ease-in-out;
     text-align: center;
-    
+    z-index: 2;
+}
 
+#leftBtn {
+    font-size: larger;
+}
+
+#rightBtn {
+    font-size: larger;
+}
+
+
+#topSubmitBtn {
+    margin: 0 !important;
+    margin-left: 5px !important;
+    height: 10vh;
+    font-size: larger;
+}
+
+/* input text start */
+.alignTextCenter {
+    margin: auto;
 }
 
 .inputText {
-    height: 9.4vh;
+    display:flex;
+    background-color: #1b1b1b;opacity:0.7 ;
+    justify-content: center;
+    height: 9.7vh;
     width: 60vw;
     border: solid;
     border-color: #fc2f70;
     border-width: 1px;
+    align-content: center;
+    align-items: center;    
     text-align: center;
     margin-top: 5px;
+    z-index: 1;
+    position: relative;
+    color: white;
 }
 
-input:focus {
+.inputText:hover {
+  cursor: text;
+}
+
+.inputText::before {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: 1px solid #fc2f70;
+  transform-origin: center;
+  transform: scale(1);
+}
+
+.inputText:hover::before {
+  transition: all 0.75s ease-in-out;
+  transform-origin: center;
+  transform: scale(1.75);
+  border: 5px solid #fc2f70;
+  opacity: 0;
+}
+
+
+/* inputtext end */
+
+.input:focus {
   outline: none;
 }
 
-input::placeholder {
+.input::placeholder {
   color: hsla(0, 0%, 100%, 0.6);
 }
 
 span {
   position: absolute;
-  background-color: #fc2f70;
+  background-color: #3cefff;
   transform-origin: center;
   transition: transform 0.5s ease;
 }
@@ -111,11 +192,11 @@ span {
   right: 0;
 }
 
-input:focus ~ .top, input:focus ~ .bottom {
+.input:focus ~ .top, input:focus ~ .bottom {
   transform: scaleX(1);
 }
 
-input:focus ~ .left, input:focus ~ .right {
+.input:focus ~ .left, input:focus ~ .right {
   transform: scaleY(1);
 }
 
