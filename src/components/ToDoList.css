@@ -65,7 +65,7 @@ form {
 
 input {
     border: solid;
-    border-color: #1b1b1b;
+    border-color: #1b1b1b !important;
     border-width: 0.1px;
     margin-right: 5px;
     height: 10vh;
